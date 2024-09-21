@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- <h1 class="text:xl">Vaibhav Shukla<%=12+2%></h1> -->
+
+    <!-- <div class="main w-full min-h-screen bg-zinc-900">
+        <div class="form flex flex-col align-center">
+            
+                <form class="flex flex-col h-[20em] w-[33em] p-[2em] bg-gray-800 justify-center align-center" action="">
+                    <input class="title bg-zinc-300" type="text" placeholder="Title for The form">
+                    <textarea class="bg-sky-900" placeholder="Write Your Task Details Here">
+                </textarea>
+                <div class="flex flex-row">
+
+                    <button class="btn-primary bg-sky-900 w-[5em] m-[1em] rounded-full">
+                        Save changes
+                    </button>
+                    <button class="btn-primary bg-sky-900 w-[5em] m-[1em] rounded-full">
+                        Save changes
+                    </button>
+                    <button class="btn-primary bg-sky-900 w-[5em] m-[1em] rounded-full">
+                        Save changes
+                    </button>
+                </div>
+                </form>
+            </form>
+        </form>
+           
+        </div>
+
+    </div> -->
+    <div class="h-34 bg-gradient-to-r from-cyan-200 to-blue-200 flex justify-center items-center w-full min-h-screen bg-zinc-900">
+        <div class="w-[40em] bg-zinc-600 border-b border-gray-600 text-grey-500 p-5 rounded-lg shadow-lg">
+          <h2 class='flex text-bold text-2xl py-5 item-center justify-center'>Adding Information</h2>
+  
+  
+  
+          <form action="/create" method="post"
+           class="space-y-4">
+            <div class="flex flex-col">
+              <label htmlFor="name" class="mb-2 text-sm font-medium text-grey-300">Title Of The Form
+                
+              </label>
+              <input
+              class="form-input mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-grey-200"
+              placeholder="Title Here"
+              name="title">
+            
+                
+            </div>
+  
+          
+            <div class="flex flex-col">
+  
+              <label htmlFor="Description" class="mb-2 text-sm font-medium text-grey-300">
+                Description
+              </label>
+              <textarea
+              class="form-input mt-1 block w-full  bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-grey-200"
+                name="details"
+                placeholder="Write Description Here"></textarea>
+               
+              </textarea>
+        
+  
+            <button class="w-full py-2 mt-4 bg-green-500 text-gray-900 font-semibold rounded-md hover:bg-green-600 transition">
+              Create Task
+            </button>
+          </form>
+          
+            
+            <div class="tasks flex flex-row m-[1em]">
+            <% if(files.length>0){ %>
+                <% files.forEach(function(val){ %>
+                        <div class="tasks w-[20em] h-[5em]  bg-gray-500 m-[0.5em]">
+                            <div class="head text-center"><h1><%= val %></h1></div>
+                            <div class="flex body justify-between">
+                                <a class="text-blue-500 text-center" href="/files/<%= val %>">Read More</a>
+                                <a class="text-blue-500 text-center" href="/edit/<%= val %>">Edit</a>
+                
+                            </div>
+                        </div>
+                        <% }) %>
+                        <% } else{ %>
+                            <h3>No Tasks Yet</h3>
+                            <% } %>
+
+            
+          </div>
+        </div>
+      </div>
+      
+    
+    <script src="/javascript/script.js"></script>
+    
+</body>
+</html>

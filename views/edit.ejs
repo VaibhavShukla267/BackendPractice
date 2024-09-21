@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <!-- Parent container to hold both forms side by side -->
+        <div class="min-h-screen w-full bg-zinc-700 text-red-400 flex items-center justify-center">
+            <div class="flex flex-row gap-8">
+                <!-- First form container -->
+                <div class="main">
+                    <form action="/edit" method="post" class="flex flex-col space-y-4 border border-zinc-500 w-[20em] h-[19em] p-6">
+                        <div class="form">
+                            <h1>Edit Title</h1>
+                            <label for="prevtitle" class="mb-2 text-sm font-medium text-gray-300">Previous</label>
+                            <input
+                          
+                            class="form-input mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-gray-200"
+                            value="<%= filename %>"
+                            name="prevtitle">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="newTitle" class="mb-2 text-sm font-medium text-gray-300">New Title</label>
+                            <textarea
+                            class="form-input mt-1 block w-full bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-gray-200"
+                            name="newTitle"
+                            placeholder="Write New Title Here"></textarea>
+                        </div>
+
+                        <button class="w-[70%] py-2 mt-4 bg-blue-500 text-gray-900 font-semibold rounded-md hover:bg-blue-600 transition">
+                           Update Title
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Second form container -->
+                <div class="main">
+                    <form action="/edit" method="post" class="flex flex-col space-y-4 border border-zinc-500 p-6 w-[20em]">
+                        <div class="form">
+                            <h1>Edit Description</h1>
+                            <label for="prevdes" class="mb-2 text-sm font-medium text-gray-300">Previous Description</label>
+                            <textarea
+                            class="form-input mt-1 block w-full px-0 py-0 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-gray-200"
+                            value="<%= filedata %>"
+                            name="prevdes">
+                            </textarea>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="newdesc" class="mb-2 text-sm font-medium text-gray-300">New Description</label>
+                            <textarea
+                            class="form-input mt-1 block w-full bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring focus:ring-gray-200"
+                            name="newdesc"
+                            placeholder="Write New Description Here"></textarea>
+                        </div>
+
+                        <button class="w-[90%] py-2 mt-4 bg-blue-500 text-gray-900 font-semibold rounded-md hover:bg-blue-600 transition">
+                            Update Description
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
