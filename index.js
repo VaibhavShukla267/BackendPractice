@@ -38,9 +38,9 @@ app.post("/edit",function(req,res){
         res.redirect('/');
     })
     // New Content Update
-    fs.writeFile(`./files/${req.body.newTitle}`,req.body.newdesc,function(err){
-        res.redirect('/');
-    })
+    // fs.writeFile(`./files/${req.body.newTitle}`,req.body.newdesc,function(err){
+    //     res.redirect('/');
+    // })
 
    
 });
@@ -48,9 +48,9 @@ app.post("/edit",function(req,res){
 
 
 // FileData
-app.get("/edit/:filedata",function(req,res){
-   res.render('edit',{filedata:req.params.filedata})
-});
+// app.get("/edit/:filedata",function(req,res){
+//    res.render('edit',{filedata:req.params.filedata})
+// });
 
 app.post("/create",function(req,res){
     fs.writeFile(`./files/${req.body.title.split('').join('')}.txt`,req.body.details,function(err){
